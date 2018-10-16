@@ -10,9 +10,16 @@
       <div class="container">
         <h2>FCC Apis and Microservices Projects</h2>
         <h3>Projects implemented:</h3>
-        <ul class="user-stories">
+        <ul>
           <li>Timestamp service</li>
           <li>Request header parser / whoami service</li>
+          <li>URL shortener service:
+          <form id="urlshortener" action="api/shorturl/new" method="POST">
+            <label for="url_input">URL to be shortened:</label>
+            <input id="url_input" type="text" name="url" placeholder="e.g. https://www.example.com">
+            <input type="submit" value="POST URL">
+          </form>
+          </li>
         </ul>
       </div>
     </body>
