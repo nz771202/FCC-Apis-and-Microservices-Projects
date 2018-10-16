@@ -24,6 +24,7 @@ app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 
+// Timestamp API
 app.get("/api/timestamp/:date_string", function (req, res) {
   const d = new Date(req.params.date_string);
   if (d == 'Invalid Date') {
@@ -33,6 +34,7 @@ app.get("/api/timestamp/:date_string", function (req, res) {
   }
 });
 
+// Whoami API
 app.get('/api/whoami', (req, res) => {
   res.json({
     ipaddress: req.ip,
@@ -40,6 +42,9 @@ app.get('/api/whoami', (req, res) => {
     software: req.headers['user-agent']
   });
 });
+
+// Url shortener API
+app.use('/api/shorturl', require('./url-shortener').create());
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
