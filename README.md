@@ -5,3 +5,4 @@
 * Timestamp service
 * Request header parser / whoami service
 * URL shortener service
+* Exercise tracker service

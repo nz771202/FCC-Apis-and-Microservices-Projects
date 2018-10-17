@@ -1,24 +1,59 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>FCC Apis and Microservices Projects</title>
-      <link rel="shortcut icon" href="https://cdn.hyperdev.com/us-east-1%3A52a203ff-088b-420f-81be-45bf559d01b1%2Ffavicon.ico" type="image/x-icon"/>
-      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-      <link href="style.css" rel="stylesheet" type="text/css">
+     <title>FCC Apis and Microservices Projects</title>
+     <link rel="shortcut icon" href="https://cdn.hyperdev.com/us-east-1%3A52a203ff-088b-420f-81be-45bf559d01b1%2Ffavicon.ico" type="image/x-icon"/>
+     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+     <link href="style.css" rel="stylesheet" type="text/css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <script src="et-client.js"></script>
    </head>
    <body>
-      <div class="container">
+      <div id="main">
         <h2>FCC Apis and Microservices Projects</h2>
         <h3>Projects implemented:</h3>
         <ul>
           <li>Timestamp service</li>
           <li>Request header parser / whoami service</li>
           <li>URL shortener service:
-          <form id="urlshortener" action="api/shorturl/new" method="POST">
+          <form id="urlshortener" class="inner-box" action="api/shorturl/new" method="POST">
             <label for="url_input">URL to be shortened:</label>
             <input id="url_input" type="text" name="url" placeholder="e.g. https://www.example.com">
             <input type="submit" value="POST URL">
           </form>
+          </li>
+          <li>Exercise tracker service:
+            <div id="exercise-tracker" class="inner-box">
+              <div class="col50" id="et_forms">
+                <form id="et_newUser">
+                  <input type="text" name="username" placeholder="Your username" required>
+                  <input type="submit" value="Submit">
+                </form>
+                <div>
+                  <button id="et_listUsers">List users</button>
+                </div>
+                <form id="et_addExercise">
+                  <div>Add exercise:</div>
+                  <input type="text" name="userId" placeholder="Your userId" required>
+                  <input type="text" name="description" placeholder="Exercise description" required>
+                  <input type="number" name="duration" placeholder="Exercise duration in minutes" required>
+                  <input type="date" name="date" placeholder="Date of exercise">
+                  <input type="submit" value="Submit">
+                </form>
+                <form id="et_getLog">
+                  <div>Show exercise log:</div>
+                  <input type="text" name="userId" placeholder="UserId" required>
+                  <input type="date" name="from" placeholder="From date">
+                  <input type="date" name="to" placeholder="To date">
+                  <input type="number" name="limit" placeholder="Limit results">
+                  <input type="submit" value="Submit">
+                </form>
+              </div>
+              <div class="col50" id="et_info_wrap">
+                <pre id="et_info"></pre>
+              </div>
+              <div id="et_loading" class="overlay"></div>
+            </div>
           </li>
         </ul>
       </div>
