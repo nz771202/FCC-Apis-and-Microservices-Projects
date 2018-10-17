@@ -46,6 +46,9 @@ app.get('/api/whoami', (req, res) => {
 // Url shortener API
 app.use('/api/shorturl', require('./url-shortener').create());
 
+// Exercise tracker API
+app.use('/api/exercise', require('./exercise-tracker').create());
+
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
