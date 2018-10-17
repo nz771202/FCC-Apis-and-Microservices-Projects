@@ -19,7 +19,7 @@
           <form id="urlshortener" class="inner-box" action="api/shorturl/new" method="POST">
             <label for="url_input">URL to be shortened:</label>
             <input id="url_input" type="text" name="url" placeholder="e.g. https://www.example.com">
-            <input type="submit" value="POST URL">
+            <input type="submit" value="Submit">
           </form>
           </li>
           <li>Exercise tracker service:
@@ -53,6 +53,14 @@
                 <pre id="et_info"></pre>
               </div>
               <div id="et_loading" class="overlay"></div>
+            </div>
+          </li>
+          <li>File metadata service:
+            <div id="file-metadata" class="inner-box">
+              <form enctype="multipart/form-data" method="POST" action="/api/file_metadata">
+                <input type="file" name="upfile" required>
+                <input type="submit" value="Upload">
+              </form>
             </div>
           </li>
         </ul>

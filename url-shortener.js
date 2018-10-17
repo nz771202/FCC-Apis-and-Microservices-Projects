@@ -7,15 +7,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dns = require('dns');
 
-mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true});
-
-const Schema = mongoose.Schema;
-
-const UrlCounter = mongoose.model('UrlCounter', new Schema({
+const UrlCounter = mongoose.model('UrlCounter', new mongoose.Schema({
 	count: {type: Number, default: 1}
 }));
 
-const ShortenedUrl = mongoose.model('ShortenedUrl', new Schema({
+const ShortenedUrl = mongoose.model('ShortenedUrl', new mongoose.Schema({
 	url: {type: String, required: true},
 	index: {type: Number, required: true}
 }));
